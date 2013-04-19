@@ -2,9 +2,16 @@
 
 html, body {
 	font-family: 'Lato', sans-serif;
-	background: #13242f;
-	overflow: hidden;
+	background: #fff;
 	margin: 0;
+	color: #222;
+	height: 100%;
+}
+
+#container {
+	height: 100%;
+	width: 100%;
+	padding-top: 20px;
 }
 
 #container:before {
@@ -31,6 +38,15 @@ html, body {
     top: 0;
 }
 
+#main {
+	width: 800px;
+	margin: 0 auto;
+}
+
+#main h1 {
+	margin-top: 0;
+}
+
 audio {
 	position: absolute;
 	z-index: 2;
@@ -38,18 +54,6 @@ audio {
 	top: 0;
 }
 
-#warning {
-	text-align: center;
-	font-size: 1.5em;
-	color: #fff;
-	text-shadow: 0 2px 2px rgba(0,0,0,0.2);
-	font-weight: 100;
-	position: relative;
-	width: 500px;
-	left: 50%;
-	margin-left: -250px;
-	z-index: 100;
-}
 a {
 	color: inherit;
 }
