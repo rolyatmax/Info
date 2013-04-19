@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Info!</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="styles/info.css">
+		<link rel="stylesheet" type="text/css" href="styles/main.css">
+	</head>
+	<body>
+
+		<div id="container">
+			<h1>Info</h1>
+			<p>I got tired of writing out the same code for the "info" sections of every project I made, so I decided to write a little helper "class" that would put the info container and the info button in the DOM for me.</p>
+			<p>That's all great right there, but wouldn't it be better if it would automatically populate it with text, html, Markdown, or even content from an external README file? Yes, yes it would be. So I did that, too.</p>
+			<p>And if you don't trust Info to create and style the elements for you, then feel free to just include the elements in your HTML and pass in the HTML Elements or their IDs as strings.</p>
+		</div>
+		<script src="scripts/libs/jquery-1.9.1.min.js"></script>
+		<script src="scripts/libs/Markdown.Converter.js"></script>
+		<script src="scripts/info.js"></script>
+
+		<script>
+
+			var opts = {
+				textURL: "README.md"
+			};
+
+			new Info( opts );
+
+		</script>
+
+	</body>
+</html>
