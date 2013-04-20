@@ -55,7 +55,7 @@
       if (!(this.btn != null)) {
         this.createButton();
       }
-      if (!(opts.text != null) && !(this.html != null)) {
+      if (!(opts.text != null) && !(this.html != null) && (opts.textURL != null)) {
         url = opts.textURL;
         arry = url.split(".");
         if (arry[arry.length - 1] === "md") {
@@ -90,7 +90,9 @@
       if (this.isMarkdown) {
         this.html = this.converter.makeHtml(this.text);
       }
-      this.el.innerHTML = this.html;
+      if (this.html != null) {
+        this.el.innerHTML = this.html;
+      }
       transition = "left .5s cubic-bezier(0.23, 1, 0.32, 1)";
       this.container.style.position = "relative";
       this.container.style.transition = transition;
@@ -115,11 +117,13 @@
     Info.prototype.attachEvents = function() {
       var _this = this;
       this.btn.addEventListener("click", this.toggleInfo);
-      return document.addEventListener("keyup", function(e) {
-        if (e.which === 73) {
-          return _this.toggleInfo();
-        }
-      });
+      if (this.keyTrigger) {
+        return document.addEventListener("keyup", function(e) {
+          if (e.which === 73) {
+            return _this.toggleInfo();
+          }
+        });
+      }
     };
 
     Info.prototype.openInfo = function() {

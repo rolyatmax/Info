@@ -35,7 +35,7 @@ class Info
 		@createDiv() if not @el?
 		@createButton() if not @btn?
 
-		if not opts.text? and not @html?
+		if not opts.text? and not @html? and opts.textURL?
 			url = opts.textURL
 			arry = url.split "."
 			@isMarkdown = yes if arry[arry.length - 1] is "md"
@@ -63,7 +63,7 @@ class Info
 		@html = @text if not @html?
 		@html = @converter.makeHtml @text if @isMarkdown
 
-		@el.innerHTML = @html
+		@el.innerHTML = @html if @html?
 
 		transition = "left .5s cubic-bezier(0.23, 1, 0.32, 1)"
 
@@ -90,8 +90,9 @@ class Info
 	attachEvents: ->
 		@btn.addEventListener "click", @toggleInfo
 
-		document.addEventListener "keyup", (e) =>
-			@toggleInfo() if e.which is 73 # the letter i
+		if @keyTrigger
+			document.addEventListener "keyup", (e) =>
+				@toggleInfo() if e.which is 73 # the letter i
 
 	openInfo: =>
 		@el.className = "open"

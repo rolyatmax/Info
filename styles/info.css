@@ -7,7 +7,7 @@
 	text-align: left;
 	padding: 30px 50px;
 	width: 400px;
-	height: 100%;
+	min-height: 100%;
 	position: absolute;
 	top: 0;
 	left: -500px;

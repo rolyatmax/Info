@@ -14,7 +14,27 @@
 				<h1>Info</h1>
 				<p>I got tired of writing out the same code for the "info" sections of every project I made, so I decided to write a little helper "class" that would put the info container and the info button in the DOM for me.</p>
 				<p>That's all great right there, but wouldn't it be better if it would automatically populate it with text, html, Markdown, or even content from an external README file? Yes, yes it would be. So I did that, too.</p>
-				<p>And if you don't trust Info to create and style the elements for you, then feel free to just include the elements in your HTML and pass in the HTML Elements or their IDs as strings.</p>
+				<p>And if you don't trust Info to create and style the elements for you, then feel free to just pass in the HTML Elements or their IDs as strings and Info will use what you've already got set up.</p>
+				<hr>
+				<p>So, it's super easy to set up. Include the <code>info.js</code> and <code>info.css</code> files. Then just type a little bit of code:</p>
+				<pre><code>
+new Info();
+				</code></pre>
+
+				<p>Did you get that? Okay, this only works if you have your info element just the way you want it. It'll need an id of "info" and the rest of your content will need an id of "container". If your situation isn't this easy, not to fear, there are several options you can pass in.</p>
+				<pre><code>
+new Info({
+	textURL: "README.md",
+	el: document.getElementById("more"),  // or just pass in the id as a string
+	container: "wrapper",
+	btn: "open_info_btn",
+	keyTrigger: true
+});
+				</code></pre>
+				<p>This snippet will load asynchronously in Markdown from "README.md". It can tell it's markdown by the "md" extension, so it runs it through a converter, and populates the element passed in as <code>el</code>. It assigns a click event handler to the element passed in as <code>btn</code> which opens and closes the info section by sliding over the element passed in as <code>container</code>. When <code>keyTrigger</code> is set to <code>true</code>, it lets the user open and close the info section with the letter i.</p>
+				<p>You can also pass in <code>text</code> or <code>html</code>. If the text you've passed in is Markdown, you should set <code>isMarkdown</code> to <code>true</code>.</p>
+				<p>If using Markdown, the Markdown.Converter.js file is required as a dependency: <a href="https://code.google.com/p/pagedown/wiki/PageDown" target="_blank">https://code.google.com/p/pagedown/wiki/PageDown</a>.</p>
+				<p>Also, Info requires jQuery ONLY IF you choose to load in your content from an external file. But if you have a different library you'd like to use instead of jQuery, feel free to pass it into the options as <code>$</code>.</p>
 			</div>
 		</div>
 		<script src="scripts/libs/jquery-1.9.1.min.js"></script>
@@ -24,10 +44,14 @@
 		<script>
 
 			var opts = {
-				textURL: "README.md"
+				text: "Look How Easy It Is!\n==============\n\n*Just put all your " +
+					"extremely interesting info here. You can even use Markdown if you " +
+					"want.*",
+				isMarkdown: true,
+				keyTrigger: true
 			};
 
-			new Info( opts );
+			var info = new Info( opts );
 
 		</script>
 
