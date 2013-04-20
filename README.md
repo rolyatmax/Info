@@ -30,3 +30,5 @@ You can also pass in `text` or `html`. If the text you've passed in is Markdown,
 If using Markdown, the Markdown.Converter.js file is required as a dependency: [https://code.google.com/p/pagedown/wiki/PageDown](https://code.google.com/p/pagedown/wiki/PageDown).
 
 Also, Info requires jQuery ONLY IF you choose to load in your content from an external file. But if you have a different library you'd like to use instead of jQuery, feel free to pass it into the options as `$`.
+
+Finally, you can add or edit the styles. The `btn` element is assigned a class of "info_btn". The `el` element is assigned a class of "info_container". And the `container` element is assigned a class of "content_wrapper". (What's that? Those are the best names you've ever heard? Why thank you.) When the info section is open a class of "open" is added to the `el` element, and a class of "inactive" is added to the `container` element. So target those to change the styling if you'd like. If you need help, just look at info.css for reference.

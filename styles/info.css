@@ -1,9 +1,9 @@
-#info h1 {
+.info_container h1 {
 	text-align: center;
 	margin-top: 0;
 }
 
-#info {
+.info_container {
 	text-align: left;
 	padding: 30px 50px;
 	width: 400px;
@@ -22,15 +22,15 @@
 	font-size: 0.95em;
 }
 
-#info.open {
+.info_container.open {
 	left: 0;
 }
 
-#info a {
+.info_container a {
 	color: #eee;
 }
 
-#info_btn {
+.info_btn {
 	position: absolute;
 	top: 2%;
 	left: 2%;
@@ -51,9 +51,21 @@
 	text-align: left;
 }
 
-#info_btn:hover {
+.info_btn:hover {
 	color: #fff;
 	box-shadow: none;
 	letter-spacing: 0;
 	width: 1.6em;
+}
+
+.content_wrapper {
+	position: relative;
+	left: 0;
+	-webkit-transition: left .5s cubic-bezier(0.23, 1, 0.32, 1);
+	   -moz-transition: left .5s cubic-bezier(0.23, 1, 0.32, 1);
+	        transition: left .5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content_wrapper.inactive {
+	left: 500px;
 }
