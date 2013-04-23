@@ -18,7 +18,7 @@ So, it's super easy to set up. Include the `info.js` and `info.css` files. Then 
 Did you get that? Okay, this only works if you have your info element just the way you want it. It'll need an id of "info" and the rest of your content will need an id of "container". If your situation isn't this easy, not to fear, there are several options you can pass in.
 
 	new Info({
-		textURL: "README.md",
+		url: "README.md",
 		el: document.getElementById("more"),  // or just pass in the id as a string
 		container: "wrapper",
 		btn: "open_info_btn",
@@ -30,7 +30,5 @@ This snippet will load asynchronously in Markdown from "README.md". It can tell 
 You can also pass in `text` or `html`. If the text you've passed in is Markdown, you should set `isMarkdown` to `true`.
 
 If using Markdown, the Markdown.Converter.js file is required as a dependency: [https://code.google.com/p/pagedown/wiki/PageDown](https://code.google.com/p/pagedown/wiki/PageDown).
-
-Also, Info requires jQuery ONLY IF you choose to load in your content from an external file. But if you have a different library you'd like to use instead of jQuery, feel free to pass it into the options as `$`.
 
 Finally, you can add or edit the styles. The `btn` element is assigned a class of "info_btn". The `el` element is assigned a class of "info_container". And the `container` element is assigned a class of "content_wrapper". (What's that? Those are the best names you've ever heard? Why thank you.) When the info section is open a class of "open" is added to the `el` element, and a class of "inactive" is added to the `container` element. So target those to change the styling if you'd like. If you need help, just look at info.css for reference.

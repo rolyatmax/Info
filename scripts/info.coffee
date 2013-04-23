@@ -5,8 +5,6 @@
 	on projects. If using Markdown, the Markdown.Converter.js file
 	is required as a dependency (https://code.google.com/p/pagedown/wiki/PageDown).
 
-	Also, requires jQuery ONLY IF you choose to load in your content from an external file
-
 	In the options object, you must include a container property which may be either
 	a string or an HTML element. If you specify an 'el' property (which is to be the
 	info element), it should reside outside of the container element.
@@ -24,7 +22,6 @@ class Info
 		@text = opts.text or null
 		@isMarkdown = opts.isMarkdown or no
 		@html = opts.html or null
-		@$ = opts.$ or window.jQuery or null
 		@keyTrigger = opts.keyTrigger or no
 		@isOpen = no
 
@@ -40,28 +37,27 @@ class Info
 		@btn.className += " info_btn"
 		
 
-		if not opts.text? and not @html? and opts.textURL?
-			url = opts.textURL
+		if not opts.text? and not @html? and opts.url?
+			url = opts.url
 			arry = url.split "."
 			@isMarkdown = yes if arry[arry.length - 1] is "md"
 
-			success = (data) =>
-				@text = data
+			# Make AJAX request
+			request = new XMLHttpRequest()
+			request.open "GET", url, true
+			request.responseType = "text"
+			request.onload = =>
+				@text = request.response
 				@setup()
+			request.send()
 
-			ajaxOpts =
-				url: url
-				dataType: 'text'
-				type: 'GET'
-				success: success
-
-			@promise = @$.ajax ajaxOpts
+			@loadingFromFile = yes;
 
 		if @isMarkdown
 			MDConverter = window.Markdown.Converter or window.pagedown.Converter
 			@converter = new MDConverter()
 
-		@setup() unless @promise?
+		@setup() unless @loadingFromFile is yes
 
 	setup: ->
 
