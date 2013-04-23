@@ -88,7 +88,7 @@ new Info();
 				<p>Did you get that? Okay, this only works if you have your info element just the way you want it. It'll need an id of "info" and the rest of your content will need an id of "container". If your situation isn't this easy, not to fear, there are several options you can pass in.</p>
 				<pre><code>
 new Info({
-	textURL: "README.md",
+	url: "README.md",
 	el: document.getElementById("more"),  // or just pass in the id as a string
 	container: "wrapper",
 	btn: "open_info_btn",
@@ -98,13 +98,11 @@ new Info({
 				<p>This snippet will load asynchronously in Markdown from "README.md". It can tell it's markdown by the "md" extension, so it runs it through a converter, and populates the element passed in as <code>el</code>. It assigns a click event handler to the element passed in as <code>btn</code> which opens and closes the info section by sliding over the element passed in as <code>container</code> - so make sure your <code>el</code> element resides outside of your <code>container</code> element. When <code>keyTrigger</code> is set to <code>true</code>, it lets the user open and close the info section with the letter i.</p>
 				<p>You can also pass in <code>text</code> or <code>html</code>. If the text you've passed in is Markdown, you should set <code>isMarkdown</code> to <code>true</code>.</p>
 				<p>If using Markdown, the Markdown.Converter.js file is required as a dependency: <a href="https://code.google.com/p/pagedown/wiki/PageDown" target="_blank">https://code.google.com/p/pagedown/wiki/PageDown</a>.</p>
-				<p>Also, Info requires jQuery ONLY IF you choose to load in your content from an external file. But if you have a different library you'd like to use instead of jQuery, feel free to pass it into the options as <code>$</code>.</p>
 				<p>Finally, you can add or edit the styles. The <code>btn</code> element is assigned a class of "info_btn". The <code>el</code> element is assigned a class of "info_container". And the <code>container</code> element is assigned a class of "content_wrapper". (What's that? Those are the best names you've ever heard? Why thank you.) When the info section is open a class of "open" is added to the <code>el</code> element, and a class of "inactive" is added to the <code>container</code> element. So target those to change the styling if you'd like. If you need help, just look at info.css for reference.</p>
 
 				<p>Check out <a href="http://tbaldw.in/viz">http://tbaldw.in/viz</a> for another example.</p>
 			</div>
 		</div>
-		<script src="scripts/libs/jquery-1.9.1.min.js"></script>
 		<script src="scripts/libs/Markdown.Converter.js"></script>
 		<script src="scripts/info.js"></script>
 
