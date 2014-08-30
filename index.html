@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="styles/info.css">
 		<style>
-			@import url( http://fonts.googleapis.com/css?family=Lato:400,700 );
+			@import url( https://fonts.googleapis.com/css?family=Lato:400,700 );
 
 			html, body {
 				font-family: 'Lato', sans-serif;
@@ -35,7 +35,7 @@
 			}
 
 			#container:after {
-			    background: url( 'http://s.cdpn.io/1715/noise-1.png' );
+			    background: url( 'img/noise-1.png' );
 			    position: absolute;
 			    content: '';
 			    z-index: 1;
@@ -78,7 +78,7 @@
 				<p>I got tired of writing out the same code for the "info" sections of every project I made, so I decided to write a little helper "class" that would put the info container and the info button in the DOM for me.</p>
 				<p>That's all great right there, but wouldn't it be better if it would automatically populate it with text, html, Markdown, or even content from an external README file? Yes, yes it would be. So I did that, too.</p>
 				<p>And if you don't trust Info to create and style the elements for you, then feel free to just pass in the HTML Elements or their IDs as strings and Info will use what you've already got set up.</p>
-				<p>I've got some more info below, but jump on over to <a href="http://github.com/rolyatmax/info">http://github.com/rolyatmax/info</a> if you want to just see the code.</p>
+				<p>I've got some more info below, but jump on over to <a href="https://github.com/rolyatmax/info">http://github.com/rolyatmax/info</a> if you want to just see the code.</p>
 				<hr>
 				<p>So, it's super easy to set up. Include the <code>info.js</code> and <code>info.css</code> files. Then just type a little bit of code:</p>
 				<pre><code>
@@ -100,7 +100,7 @@ new Info({
 				<p>If using Markdown, the Markdown.Converter.js file is required as a dependency: <a href="https://code.google.com/p/pagedown/wiki/PageDown" target="_blank">https://code.google.com/p/pagedown/wiki/PageDown</a>.</p>
 				<p>Finally, you can add or edit the styles. The <code>btn</code> element is assigned a class of "info_btn". The <code>el</code> element is assigned a class of "info_container". And the <code>container</code> element is assigned a class of "content_wrapper". (What's that? Those are the best names you've ever heard? Why thank you.) When the info section is open a class of "open" is added to the <code>el</code> element, and a class of "inactive" is added to the <code>container</code> element. So target those to change the styling if you'd like. If you need help, just look at info.css for reference.</p>
 
-				<p>Check out <a href="http://tbaldw.in/viz">http://tbaldw.in/viz</a> for another example.</p>
+				<p>Check out <a href="https://tbaldw.in/viz">http://tbaldw.in/viz</a> for another example.</p>
 			</div>
 		</div>
 		<script src="scripts/libs/Markdown.Converter.js"></script>
