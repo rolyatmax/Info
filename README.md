@@ -7,7 +7,7 @@ That's all great right there, but wouldn't it be better if it would automaticall
 
 And if you don't trust Info to create and style the elements for you, then feel free to just pass in the HTML Elements or their IDs as strings and Info will use what you've already got set up.
 
-I've got some more info below, but jump on over to [http://tbaldw.in/info](http://tbaldw.in/info) if you want to see it in action.
+I've got some more info below, but jump on over to [http://tbaldw.in/infojs](http://tbaldw.in/infojs) if you want to see it in action.
 
 --------
 
